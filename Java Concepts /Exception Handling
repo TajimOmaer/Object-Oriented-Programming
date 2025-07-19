@@ -1,0 +1,40 @@
+package nestedtry;
+
+public class NestedTry {
+
+    public static void main(String[] args) {
+                                                                                      //Outer try block.
+       try{
+                                                                                      //Inner try block.
+           try{
+               System.out.println("going to divide by 0");
+               int b = 39/0;
+           }
+                                                                              //catch block of inner try block 1
+           catch(ArithmeticException e){
+               System.out.println(e);
+           }
+           
+           
+                                                                                      //Inner try block 2.
+           try{
+               int a[] = new int[5];
+               
+               
+                                                                            //Assigning the value out of array bounds.
+               a[5] = 4;
+       }
+                                                                            //Catch block of inner try block 2.
+           catch(ArrayIndexOutOfBoundsException e){
+               System.out.println(e);
+           }
+           System.out.println("Other Statement");
+       }
+                                                                            //Catch block of inner try block 1.
+       catch(Exception e){
+           System.out.println("Handled the exception(Outer catch)");
+       }
+        System.out.println("Normal Flow..");
+    }
+    
+}
